@@ -1,0 +1,61 @@
+{% load crispy_forms_tags %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<style>
+ .asteriskField {
+    display: none;
+}
+</style>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In</title>
+</head>
+<body>
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <center><strong>Message:</strong> {{ message }}</center>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+    </div>
+    {% endfor %}
+	
+	<div class="container">
+  <div class="jumbotron">
+    <center><h3>Log In to your account!</h3></center>
+    <form method="post" enctype="multipart/form-data" action="">
+        {% csrf_token %}
+  <div class="row">
+  <div class="form-group col-md-6 mb-0">
+    <div class="form-group">
+        <label for="FirstName">FirstName</label>
+        <input type="text" class="form-control" id="FirstName" name="FirstName" placeholder="Enter Your FirstName" Required>
+    </div>
+    </div>
+    <div class="form-group col-md-6 mb-0">
+        <div class="form-group">
+            <label for="LastName">LastName</label>
+            <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Enter Your LastName" Required>
+        </div>
+</div>
+<div class="form-group col-md-6 mb-0">
+    <div class="form-group">
+        <label for="PhoneNumber">PhoneNumber</label>
+        <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber" placeholder="Enter Your PhoneNumber" Required>
+    </div>
+</div>
+</div>
+        <center><button type="submit" class="btn btn-primary">Update</button><br></br></center> 
+        
+        
+    </form>
+    </div>
+    </div>
+</body>
+</html>

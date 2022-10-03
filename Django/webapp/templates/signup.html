@@ -1,0 +1,62 @@
+{% load crispy_forms_tags %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<style>
+ .asteriskField {
+    display: none;
+}
+.button {
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        
+        .btn {background-color: #4CAF50;} /* Submit */
+</style>
+
+</head>
+<body>
+	
+	<div class="container">
+  <div class="jumbotron">
+
+  <form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="row">
+  <div class="form-group col-md-6 mb-0">
+  <i>{{ form.FirstName|as_crispy_field }}</i>
+  </div>
+  <div class="form-group col-md-6 mb-0">
+  <i>{{ form.LastName|as_crispy_field }}</i>
+  </div>
+  <div class="form-group col-md-6 mb-0">
+  <i>{{ form.Email|as_crispy_field }}</i>
+  </div>
+  <div class="form-group col-md-6 mb-0">
+  <i>{{ form.UserName|as_crispy_field }}</i>
+  </div>
+  <div class="form-group col-md-6 mb-0">
+  <i>{{ form.PhoneNumber|as_crispy_field }}</i>
+  </div>
+  <div class="form-group col-md-6 mb-0">
+  <i>{{ form.Password|as_crispy_field }}</i>
+  </div>
+  <div class="form-group col-md-6 mb-0">
+  <i>{{ form.ConfirmPassword|as_crispy_field }}</i>
+  </div>
+  <br></br>
+  <button type="submit" class="btn btn-primary">Sign Up</button>
+</form>
+</div>
+</body>
+</html>
